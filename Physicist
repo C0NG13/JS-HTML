@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2</title>
+<style>
+body {
+    background-color: grey; /* Change background color to black */
+    margin: 0; /* Reset default margin */
+    font-family: Arial, sans-serif; /* Specify font family */
+}
+
+	.center-text {
+    text-align: center;
+}
+
+        /* Style for the buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: left; /* Lefts buttons horizontally */
+
+            margin-left: 0in; /* Set left margin to 2 inches */
+
+
+            margin-top: 20px;
+        }
+        
+        .button-container button {
+    margin: 5px 5in 5px 5in; /* Top, right, bottom, left margins */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00008B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left; /* Left justify the text */
+}
+
+
+        .button-container button:hover {
+            background-color: #228B22;
+        }
+
+        /* Style for the modal */
+        
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+  background-color: #3498db;
+  color: white;
+  padding: 8px; /* thinner header band */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: calc(80% + 4in); /* make box wider by 4 inches */
+  max-width: calc(480px + 4in); /* maximum width with additional 4 inches */
+  border-radius: 5px;
+}
+
+.close {
+  color: red;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: darkred;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+    </style></head>
+<body>
+	<button onclick="alert('The goal of this game is to not get phished. If you think an email is spam, do not open it. If an email is safe, open it. Click links that you think are safe. When you have completed checking the email inbox, click the HOME button.')">Directions</button>
+	<button onclick="window.location.href='main.html'">Home</button>
+	<button onclick="alert('Try hovering over addresses to see what happens. These phishing emails have a higher level of social engineering. So, the phishing techniques are slightly more advanced than Level 1. Do not click any bad links! When you are phished, you will be notified.')">Level 2 Tips</button>
+
+    <div class="center-text">
+	<h1>Physicist Email</h1>
+ <!-- Button to open modal -->
+<div class="button-container">
+<button onclick="showModal('myModal')">Career Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Space X Students Recruiting Event</button>
+</div>
+
+<div class="button-container">
+<button onclick="showModal('myModal2')">Professor Moriarty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Putnum Exam Problem Solving Class</button>
+</div>
+
+<div class="button-container">
+<button onclick="showModal('myModal3')">IT Support&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IT Service Survey</button>
+</div>
+
+<div class="button-container">
+<button onclick="showModal('myModal4')">LinkedIn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You Received a Message</button>
+</div>
+
+<div class="button-container">
+<button onclick="showModal('myModal5')">Math Club&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meeting Tuesday</button>
+</div>
+
+<div class="button-container">
+<button onclick="showModal('myModal6')">Physics Club&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reminder: Meeting on Thursday</button>
+</div>
+
+<div class="button-container">
+<button onclick="showModal('myModal7')">Professor Jackson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Physics Jokes</button>
+</div>
+
+
+<div class="button-container">
+<button onclick="showModal('myModal8')">Professor Danijel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elliptic Curves and Applications Seminar</button>
+</div>
+
+
+<!-- Modal 1 -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+ 
+      <h2>Space X Students Recruiting Event</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:careerservices@schoolemail.com">careerservices@schoolemail.com</a></p>
+    <p>Dear Physics Department,</p>
+    <p>Students from our school who worked for SpaceX will be answering questions at our event this afternoon. Professors, encourage your students to drop by between classes!</p>
+    <p>Date: Today </p>
+    <p>Time: 1 - 3 pm MDT </p>
+    <p>Location: Tiger Hall</p>
+    <p>Hope to see you there! </p>
+    <p>Sincerely,</p>
+    <p>Career Services</p>
+    <button onclick="closeModal('myModal')">close</button>
+  </div>
+</div>
+
+
+<!-- Modal 2 -->
+<div id="myModal2" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Putnum Exam Problem Solving Class</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:professorm@schoolemail.com">professorm@schoolemail.com</a></p>
+    <p>Dear All,</p>
+    <p>I am teaching a course on problem solving this semester for the Putnum Exam. Please feel free to attempt the problems that we are working on.</p>
+    <p> <a href="http://www.professormoriarty.com/problemset1">www.professormoriarty.com/problemset1</a></p> <!-- Added 'http://' -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // Find the anchor tag with ID 'theirs-link'
+        var link = document.querySelector('a[href="http://www.professormoriarty.com/problemset1"]'); // Added 'http://'
+
+        // Add click event listener to the anchor tag
+        link.addEventListener('click', function(event) {
+          // Prevent default behavior (opening the link)
+          event.preventDefault();
+          
+          // Redirect to Moriarty.html
+          window.location.href = 'Moriarty.html';
+        });
+      });
+    </script>
+    <p>Sincerely,</p>
+    <p>Professor Moriarty</p>
+    <button onclick="closeModal('myModal2')">close</button>
+  </div>
+</div>
+<!-- Modal 3 -->
+<div id="myModal3" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h2>IT Service Survey</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+   <p>From: <a href="mailto:ITsupport@Schoolemai1.com">ITsupport@schoolemail.com</a></p>
+
+    <p>Hello,</p>
+    <p>IT Support would like to know how our services have helped you this semester.</p>
+    <p>This is a campus-wide survey to see how we can improve our customer services.</p>
+    <p>Please fill out the following form:</p>
+    <p> <a href="http://www.Schoo1website.com/campussurvey">www.schoolwebsite.com/campussurvey</a></p>
+
+
+<script>
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find the anchor tag with ID 'theirs-link'
+    var link = document.querySelector('a[href="http://www.Schoo1website.com/campussurvey"]');
+
+    // Add click event listener to the anchor tag
+    link.addEventListener('click', function(event) {
+      // Prevent default behavior (opening the link)
+      event.preventDefault();
+      
+      // Redirect to survey.html
+      window.location.href = 'survey.html';
+    });
+  });
+</script>
+
+    
+    <button onclick="closeModal('myModal3')">close</button>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div id="myModal4" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h2>You Received a Message</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:noreply@linkedin.com">noreply@linkedin.com</a></p>
+    <p>You got a message from Paul Jones!</p>
+    <p>Dear Professor, We went to school together and I thought we would connect! </p>
+    <p>Open your message:</p>
+       <p> <a href="http://www.linkedin.com/messages">www.linkedin.com/messages</a></p>
+
+    <button onclick="closeModal('myModal4')">close</button>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div id="myModal5" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h2>Meeting Tuesday</h2>
+    </div>
+   <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:mathclub@schoolemail.com">mathclub@schoolemail.com</a></p>
+    <p>Hey Math Club Members!</p>
+    <p>We will have our meeting this Tuesday at the Peterson Hall lounge.</p>
+    <p>I look forward to it!</p>
+    <p>Sincerely,</p>
+    <p>Ashley</p>
+    <p>Math Club President</p>
+    <button onclick="closeModal('myModal5')">close</button>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div id="myModal6" class="modal">
+  <div class="modal-content" id="modalContent6">
+    <div class="modal-header">
+      <h2>Reminder: Meeting on Thursday</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:physicsclub@schoolemail.com">physicsclub@schoolemail.com</a></p>
+    <p>Hi Physics Club Members!</p>
+    <p>We will have our meeting this Thursday at the Johnson Hall lounge.</p>
+    <p>Bring a snack for the potluck.</p>
+    <p>Sincerely,</p>
+    <p>Jennie (club president)</p>
+
+    <button onclick="closeModal('myModal6')">close</button>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div id="myModal7" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h2>Physics Jokes</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:peterp@schoolemail.com">peterp@schoolemail.com</a></p>
+    <p>Hello Professor,</p>
+    <p>Here are the 2 jokes that you requested me to send your way...</p>
+	<p>Joke 1:</p>
+	<p>Joke 2:</p>
+    <button onclick="closeModal('myModal7')">close</button>
+  </div>
+</div>
+
+<!-- Modal 8 -->
+<div id="myModal8" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h2> Elliptic Curves and Applications Seminar</h2>
+    </div>
+    <p>To: <a href="mailto:professor@schoolemail.com">professor@schoolemail.com</a></p>
+    <p>From: <a href="mailto:professord@schoolemail.co">mailto:professord@schoolemail.co</a></p>
+    <p>Hello All,</p>
+    <p>This week we will be reviewing a few complex applications of elliptical curves.</p>
+	<p>Our speaker will be William, who is a 2nd year student.</p>
+	<p>Sincerely, </p>
+	<p>Professor Danijel</p>
+    <button onclick="closeModal('myModal8')">close</button>
+  </div>
+</div>
+
+
+<script>
+// Function to display the modal
+function showModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "none";
+}
+</script>
+
+
+</body>
+</html>
