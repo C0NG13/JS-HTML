@@ -362,7 +362,28 @@ function openModal(modalId) {
   var modalxxx = document.getElementById(modalId);
   modalxxx.style.display = "block";
 
-	// Function to close the modal or change the message
+
+// Function to close the modal or change the message
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
+  var messageElement = document.getElementById("message");
+  if (messageElement.innerText === "Message 1") {
+    messageElement.innerText = "Message 2";
+  } else if (messageElement.innerText === "Message 2") {
+    var closeButton = document.querySelector("#" + modalId + " .close");
+    closeButton.style.display = "none";
+  } else {
+    modal.style.display = "none";
+  }
+}
+
+// Function to redirect to index.html
+function redirect() {
+  window.location.href = "index.html";
+}
+
+
+		// Function to close the modal or change the message
 function closeModal(modalId) {
   var modal = document.getElementById(modalId);
   var messageElement = document.getElementById("message");
@@ -383,24 +404,6 @@ function closeModal(modalId) {
 }
 }
 
-// Function to close the modal or change the message
-function closeModal(modalId) {
-  var modal = document.getElementById(modalId);
-  var messageElement = document.getElementById("message");
-  if (messageElement.innerText === "Message 1") {
-    messageElement.innerText = "Message 2";
-  } else if (messageElement.innerText === "Message 2") {
-    var closeButton = document.querySelector("#" + modalId + " .close");
-    closeButton.style.display = "none";
-  } else {
-    modal.style.display = "none";
-  }
-}
-
-// Function to redirect to index.html
-function redirect() {
-  window.location.href = "index.html";
-}
 </script>
   </div>
 </div>
