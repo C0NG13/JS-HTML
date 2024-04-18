@@ -331,73 +331,77 @@ body {
 
 
 
-<!-- Modal 6 -->
-<div id="myModal6" class="modal">
-  <div class="modal-content" id="modalContent6">
-    <div class="modal-header">
-      <h2>Re: Call Me</h2>
-    </div>
-    <p>To: <a href="mailto:director@nasa.gov">director@nasa.gov</a></p>
-    <p>From: <a href="mailto:jamesa@nasa.gov">jamesa@nasa.gov</a></p>
-    <p>Hey,</p>
-    <p>I just saw your email. Can you call me to discuss the matter? 904-405-2553</p>
-    <p>Sincerely,</p>
-    <p>James</p>
 
-    <br>
-    <br>
-    <br>
-    <!-- Button to trigger the modal -->
-    <button onclick="openModal('myModalxxx')">close</button>
-      
-    <!-- The Modalxxx -->
+	    
+
+
+
+
+    <!-- Modal 6 -->
+    <div id="myModal6" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" style="width: 80%; max-width: 480px; text-align: center;">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <h2>Re: Call Me</h2>
+            </div>
+            <!-- Modal body -->
+            <p>To: <a href="mailto:director@nasa.gov">director@nasa.gov</a></p>
+            <p>From: <a href="mailto:jamesa@nasa.gov">jamesa@nasa.gov</a></p>
+            <p>Hey,</p>
+            <p>I just saw your email. Can you call me to discuss the matter? 904-405-2553</p>
+            <p>Sincerely,</p>
+            <p>James</p>
+
+            <!-- Button to open the mymodalxxx -->
+            <button onclick="openModal('myModalxxx')">Close</button>
+        </div>
+    </div>
+
+    <!-- Modal mymodalxxx -->
     <div id="myModalxxx" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('myModalxxx')">&times;</span>
-        <p id="message">Message 1</p>
-       <button onclick="openModal('myModalx')">Open Modal</button>
-      </div>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!-- Close button -->
+            <span class="close" onclick="toggleMessage()">x</span>
+            <!-- Message -->
+            <p id="message">Message 1</p>
+            <!-- OK button -->
+            <button onclick="window.location.href='index.html'">OK</button>
+        </div>
     </div>
 
+    <!-- Your JavaScript code -->
+    <script>
+        // Function to open the modal
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
 
+        // Function to close the modal
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
 
-<!-- The Modal -->
-<div id="myModalx" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('myModalx')">&times;</span>
-    <p id="message">Message 1</p>
-    <button onclick="changeMessage()">OK</button>
-  </div>
-</div>
+        // Function to toggle the message and hide X button after the second click
+        var closeClickCount = 0;
+        function toggleMessage() {
+            closeClickCount++;
+            var message = document.getElementById("message");
+            if (closeClickCount === 1) {
+                message.innerText = "Message 2";
+            } else if (closeClickCount === 2) {
+                // Do not change message on second click
+                var closeButton = document.querySelector(".close");
+                closeButton.style.display = "none";
+            }
+        }
 
-<script>
-// Function to open the modal
-function openModal(modalId) {
-  var modal = document.getElementById(modalId);
-  modal.style.display = "block";
-}
-
-// Function to close the modal
-function closeModal(modalId) {
-  var modal = document.getElementById(modalId);
-  modal.style.display = "none";
-}
-
-// Variable to keep track of the number of clicks
-var closeClickCount = 0;
-
-// Function to change the message
-function changeMessage() {
-  closeClickCount++;
-  if (closeClickCount == 2) {
-    document.getElementById("message").innerText = "Message 2";
-  }
-}
 </script>
-  </div>
-</div>
+
+
 
 
 
