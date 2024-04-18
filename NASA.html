@@ -125,8 +125,11 @@ body {
 }
 
 
+
+	
+
 	  /* Styles for the modal */
-  .modalxxx {
+  .modal {
     display: none; /* Hide the modal by default */
     position: fixed;
     z-index: 1;
@@ -137,7 +140,7 @@ body {
     overflow: auto;
     background-color: rgba(0,0,0,0.5);
   }
-  .modalxxx-content {
+  .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -373,13 +376,13 @@ body {
 // Function to open the modal
 function openModal(modalId) {
   var modal = document.getElementById(modalId);
-  modalxxx.style.display = "block";
+  modal.style.display = "block";
 }
 
 // Function to close the modal
 function closeModal(modalId) {
   var modal = document.getElementById(modalId);
-  modalxxx.style.display = "none";
+  modal.style.display = "none";
 }
 
 // Variable to keep track of the number of clicks
