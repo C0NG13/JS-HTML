@@ -353,17 +353,17 @@ body {
       <div class="modal-content">
         <span class="close" onclick="closeModal('myModalxxx')">&times;</span>
         <p id="message">Message 1</p>
-       <button onclick="openModal('myModal3')">Open Modal</button>
+       <button onclick="openModal('myModalx')">Open Modal</button>
       </div>
     </div>
 
 
 
 <!-- The Modal -->
-<div id="myModal3" class="modal">
+<div id="myModalx" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close" onclick="closeModal('myModal3')">&times;</span>
+    <span class="close" onclick="closeModal('myModalx')">&times;</span>
     <p id="message">Message 1</p>
     <button onclick="changeMessage()">OK</button>
   </div>
@@ -373,13 +373,13 @@ body {
 // Function to open the modal
 function openModal(modalId) {
   var modal = document.getElementById(modalId);
-  modal.style.display = "block";
+  modalxxx.style.display = "block";
 }
 
 // Function to close the modal
 function closeModal(modalId) {
   var modal = document.getElementById(modalId);
-  modal.style.display = "none";
+  modalxxx.style.display = "none";
 }
 
 // Variable to keep track of the number of clicks
