@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Ages</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: turquoise;
+            font-weight: bold;
+        }
+
+        #progress {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Dark Ages</h1>
+	<p>The brick you are holding is complementary.</p>
+    <p>Downloading 10 terabyte file</p>
+    <p id="progress">0%</p>
+
+    <script>
+        // Function to update the progress percentage
+        function updateProgress() {
+            let progressElement = document.getElementById("progress");
+            let progress = 0;
+            let interval = setInterval(() => {
+                progress += 5;
+                progressElement.textContent = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    // Redirect to gameover.html after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = "main.html";
+                    }, 4000);
+                }
+            }, 150); 
+        }
+
+        // Call the function to start updating progress
+        updateProgress();
+    </script>
+</body>
+</html>
