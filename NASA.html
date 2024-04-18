@@ -126,7 +126,7 @@ body {
 
 
 	  /* Styles for the modal */
-  .modal {
+  .modalxxx {
     display: none; /* Hide the modal by default */
     position: fixed;
     z-index: 1;
@@ -137,7 +137,7 @@ body {
     overflow: auto;
     background-color: rgba(0,0,0,0.5);
   }
-  .modal-content {
+  .modalxxx-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -359,8 +359,8 @@ body {
 <script>
 // Function to open the modal
 function openModal(modalId) {
-  var modal = document.getElementById(modalId);
-  modal.style.display = "block";
+  var modalxxx = document.getElementById(modalId);
+  modalxxx.style.display = "block";
 }
 
 // Function to close the modal or change the message
@@ -387,55 +387,6 @@ function redirect() {
 
 
 
-<!-- Message popup -->
-<div id="popup" class="popup">
-  <h2>Message Popup</h2>
-  <p>This is a message popup that appears along with the ripple effect.</p>
-</div>
-
-<script>
-function closeModalAndShowPopup() {
-  // Close modal
-  closeModal('myModal7');
-  
-  // Trigger ripple effect
-  triggerRipple();
-  
-  // Show message popup
-  const popup = document.getElementById('popup');
-  popup.style.display = 'block';
-  
-  // Hide popup after 2 seconds
-  setTimeout(() => {
-    popup.style.display = 'none';
-  }, 2000);
-}
-
-function triggerRipple() {
-  // Create ripple element
-  const ripple = document.createElement('span');
-  ripple.classList.add('ripple');
-  
-  // Calculate ripple size and position
-  const diameter = Math.max(document.documentElement.clientWidth, document.documentElement.clientHeight);
-  const radius = diameter / 2;
-  const xPos = radius;
-  const yPos = radius;
-  
-  // Set ripple size and position
-  ripple.style.width = ripple.style.height = `${diameter}px`;
-  ripple.style.left = `${xPos}px`;
-  ripple.style.top = `${yPos}px`;
-  
-  // Add ripple to container
-  document.body.appendChild(ripple);
-  
-  // Remove ripple after animation ends
-  ripple.addEventListener('animationend', () => {
-    ripple.remove();
-  });
-}
-</script>
 
 
 
