@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>goPhish! Game</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>goPhish! Game</title>
+<style>
+
         .center-text {
             text-align: center;
         }
-    </style>
+		
+		    body {
+        background-color: #6088C6; /* Hyacinth blue color */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+    }
+
+    #container {
+        position: relative;
+        width: 100%; /* Full width */
+        height: 400px; /* Adjust height as needed */
+        overflow: hidden; /* Hide overflow to keep fish within container */
+    }
+
+    #fish {
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
 </head>
 <body>
-	    <br>
+
+ <br>
     <br>
     <br>
     <br>
@@ -33,5 +55,30 @@
 		
 
     </div>
+	
+<div id="container">
+    <img id="fish" src="https://media.giphy.com/media/CHLQhz1h0Rp6M/giphy.gif" alt="Fish">
+    <!-- Giphy URL for fish GIF -->
+</div>
+
+<script>
+    const fish = document.getElementById('fish');
+    let posX = window.innerWidth; // Start position from the right edge of the window
+    let direction = -1; // Change direction to -1 to make the fish move left initially
+
+    function swim() {
+        posX += direction;
+        fish.style.left = `${posX}px`; // Use left property to move the fish horizontally
+
+        if (posX >= window.innerWidth || posX <= -fish.clientWidth) {
+            posX = direction > 0 ? -fish.clientWidth : window.innerWidth;
+        }
+
+        requestAnimationFrame(swim);
+    }
+
+    swim();
+</script>
 </body>
 </html>
+
