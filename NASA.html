@@ -376,7 +376,7 @@ body {
           if (messageElement.innerText === "Message 1") {
             messageElement.innerText = "Message 2";
           } else {
-            closeButton.style.display = "none";
+            closeButton.style.display = closeButton.style.display === "none" ? "block" : "none";
           }
         } else {
           // Normal behavior for other modals
