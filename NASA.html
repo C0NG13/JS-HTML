@@ -353,45 +353,46 @@ body {
       <div class="modal-content">
         <span class="close" onclick="closeModal('myModalxxx')">&times;</span>
         <p id="message">Message 1</p>
-        <button onclick="redirect()">OK</button>
+       <button onclick="openModal('myModal3')">Open Modal</button>
       </div>
     </div>
 
-    <script>
-      // Variable to keep track of the number of times the close button is clicked
-      var closeClickCount = 0;
 
-      // Function to open the modal
-      function openModal(modalId) {
-        var modalxxx = document.getElementById(modalId);
-        modalxxx.style.display = "block";
-      }
 
-      // Function to close the modal or change the message
-      function closeModal(modalId) {
-        var modal = document.getElementById(modalId);
-        var messageElement = document.getElementById("message");
-        var closeButton = document.querySelector("#" + modalId + " .close");
+<!-- The Modal -->
+<div id="myModal3" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('myModal3')">&times;</span>
+    <p id="message">Message 1</p>
+    <button onclick="changeMessage()">OK</button>
+  </div>
+</div>
 
-        // Handle special effects for myModalxxx
-        if (modalId === "myModalxxx") {
-          closeClickCount++;
-          if (closeClickCount === 1) {
-            messageElement.innerText = "Message 2";
-          } else if (closeClickCount === 2) {
-            closeButton.style.display = "none";
-          }
-        } else {
-          // Normal behavior for other modals
-          modal.style.display = "none";
-        }
-      }
+<script>
+// Function to open the modal
+function openModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "block";
+}
 
-      // Function to redirect to index.html
-      function redirect() {
-        window.location.href = "index.html";
-      }
-    </script>
+// Function to close the modal
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "none";
+}
+
+// Variable to keep track of the number of clicks
+var closeClickCount = 0;
+
+// Function to change the message
+function changeMessage() {
+  closeClickCount++;
+  if (closeClickCount == 2) {
+    document.getElementById("message").innerText = "Message 2";
+  }
+}
+</script>
   </div>
 </div>
 
