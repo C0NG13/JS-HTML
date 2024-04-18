@@ -365,9 +365,9 @@ body {
             <!-- Close button -->
             <span class="close" onclick="toggleMessage()">x</span>
             <!-- Message -->
-            <p id="message">Message 1</p>
+            <p id="message">Would you like to proceed to make a call?</p>
             <!-- OK button -->
-            <button onclick="window.location.href='index.html'">OK</button>
+            <button onclick="window.location.href='index.html'">Yes</button>
         </div>
     </div>
 
@@ -391,7 +391,7 @@ body {
             closeClickCount++;
             var message = document.getElementById("message");
             if (closeClickCount === 1) {
-                message.innerText = "Message 2";
+                message.innerText = "Nice try, that wasn't an option.";
             } else if (closeClickCount === 2) {
                 // Do not change message on second click
                 var closeButton = document.querySelector(".close");
