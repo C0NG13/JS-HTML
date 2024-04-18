@@ -323,6 +323,12 @@ body {
   </div>
 </div>
 
+
+
+
+
+
+
 <!-- Modal 6 -->
 <div id="myModal6" class="modal">
   <div class="modal-content" id="modalContent6">
@@ -363,19 +369,18 @@ body {
       function closeModal(modalId) {
         var modal = document.getElementById(modalId);
         var messageElement = document.getElementById("message");
-        if (modalId === "myModal6") {
-          // Handle special behavior for myModal6
-          modal.style.display = "none";
-        } else {
-          // Normal behavior for other modals
+        var closeButton = document.querySelector("#" + modalId + " .close");
+
+        // Handle special effects for myModalxxx
+        if (modalId === "myModalxxx") {
           if (messageElement.innerText === "Message 1") {
             messageElement.innerText = "Message 2";
-          } else if (messageElement.innerText === "Message 2") {
-            var closeButton = document.querySelector("#" + modalId + " .close");
-            closeButton.style.display = "none";
           } else {
-            modal.style.display = "none";
+            closeButton.style.display = "none";
           }
+        } else {
+          // Normal behavior for other modals
+          modal.style.display = "none";
         }
       }
 
@@ -388,6 +393,9 @@ body {
 </div>
 
 
+
+
+	    
 
 
 
