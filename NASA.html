@@ -335,79 +335,57 @@ body {
     <p>I just saw your email. Can you call me to discuss the matter? 904-405-2553</p>
     <p>Sincerely,</p>
     <p>James</p>
-	
-	    <br>
+
     <br>
     <br>
-<!-- Button to trigger the modal -->
-   <button onclick="openModal('myModalxxx')">close</button>
+    <br>
+    <!-- Button to trigger the modal -->
+    <button onclick="openModal('myModalxxx')">close</button>
+      
+    <!-- The Modalxxx -->
+    <div id="myModalxxx" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModalxxx')">&times;</span>
+        <p id="message">Message 1</p>
+        <button onclick="redirect()">OK</button>
+      </div>
+    </div>
 
+    <script>
+      // Function to open the modal
+      function openModal(modalId) {
+        var modalxxx = document.getElementById(modalId);
+        modalxxx.style.display = "block";
+      }
 
-	  
+      // Function to close the modal or change the message
+      function closeModal(modalId) {
+        var modal = document.getElementById(modalId);
+        var messageElement = document.getElementById("message");
+        if (modalId === "myModal6") {
+          // Handle special behavior for myModal6
+          modal.style.display = "none";
+        } else {
+          // Normal behavior for other modals
+          if (messageElement.innerText === "Message 1") {
+            messageElement.innerText = "Message 2";
+          } else if (messageElement.innerText === "Message 2") {
+            var closeButton = document.querySelector("#" + modalId + " .close");
+            closeButton.style.display = "none";
+          } else {
+            modal.style.display = "none";
+          }
+        }
+      }
 
-
-<!-- The Modalxxx -->
-<div id="myModalxxx" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('myModalxxx')">&times;</span>
-    <p id="message">Message 1</p>
-    <button onclick="redirect()">OK</button>
+      // Function to redirect to index.html
+      function redirect() {
+        window.location.href = "index.html";
+      }
+    </script>
   </div>
 </div>
-
-<script>
-// Function to open the modal
-function openModal(modalId) {
-  var modalxxx = document.getElementById(modalId);
-  modalxxx.style.display = "block";
-
-
-// Function to close the modal or change the message
-function closeModal(modalId) {
-  var modal = document.getElementById(modalId);
-  var messageElement = document.getElementById("message");
-  if (messageElement.innerText === "Message 1") {
-    messageElement.innerText = "Message 2";
-  } else if (messageElement.innerText === "Message 2") {
-    var closeButton = document.querySelector("#" + modalId + " .close");
-    closeButton.style.display = "none";
-  } else {
-    modal.style.display = "none";
-  }
-}
-
-// Function to redirect to index.html
-function redirect() {
-  window.location.href = "index.html";
-}
-
-
-		// Function to close the modal or change the message
-function closeModal(modalId) {
-  var modal = document.getElementById(modalId);
-  var messageElement = document.getElementById("message");
-  if (modalId === "myModal6") {
-    // Handle special behavior for myModal6
-    modal.style.display = "none";
-  } else {
-    // Normal behavior for other modals
-    if (messageElement.innerText === "Message 1") {
-      messageElement.innerText = "Message 2";
-    } else if (messageElement.innerText === "Message 2") {
-      var closeButton = document.querySelector("#" + modalId + " .close");
-      closeButton.style.display = "none";
-    } else {
-      modal.style.display = "none";
-    }
-  }
-}
-}
-
-</script>
-  </div>
-</div>
-
 
 
 
