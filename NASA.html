@@ -359,6 +359,9 @@ body {
     </div>
 
     <script>
+      // Variable to keep track of the number of times the close button is clicked
+      var closeClickCount = 0;
+
       // Function to open the modal
       function openModal(modalId) {
         var modalxxx = document.getElementById(modalId);
@@ -373,10 +376,11 @@ body {
 
         // Handle special effects for myModalxxx
         if (modalId === "myModalxxx") {
-          if (messageElement.innerText === "Message 1") {
+          closeClickCount++;
+          if (closeClickCount === 1) {
             messageElement.innerText = "Message 2";
-          } else {
-            closeButton.style.display = closeButton.style.display === "none" ? "block" : "none";
+          } else if (closeClickCount === 2) {
+            closeButton.style.display = "none";
           }
         } else {
           // Normal behavior for other modals
@@ -391,6 +395,7 @@ body {
     </script>
   </div>
 </div>
+
 
 
 
